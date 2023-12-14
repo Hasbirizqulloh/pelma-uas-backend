@@ -33,12 +33,7 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    credentials: true,
-    origin: process.env.ORIGIN,
-  })
-);
+app.use();
 app.use(express.json());
 app.use(UserRouter);
 app.use(ReportRoute);
