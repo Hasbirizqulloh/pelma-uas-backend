@@ -17,10 +17,6 @@ const store = new sessionStore({
   db: db,
 });
 
-app.use('/', (req, res) => {
-  res.send('Working');
-});
-
 // (async () => {
 //   await db.sync();
 // })();
@@ -49,6 +45,10 @@ app.use(ReportRoute);
 app.use(AuthRoute);
 
 // store.sync();
+
+app.use('/', (req, res) => {
+  res.send('Working');
+});
 
 app.listen(process.env.APP_PORT, () => {
   console.log('Server up and running...');
