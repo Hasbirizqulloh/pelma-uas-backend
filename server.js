@@ -46,8 +46,8 @@ app.use(AuthRoute);
 
 // store.sync();
 
-app.use('/', (req, res) => {
-  res.send('Working');
+app.use((req, res, next) => {
+  res.header('Access-control-Allow-Origin', '*');
 });
 
 app.listen(process.env.APP_PORT, () => {
