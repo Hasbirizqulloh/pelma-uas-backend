@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 const db = new Sequelize('dbs_pelma', 'faikar', 'dfasofd08git ', {
-  host: 'faikar',
+  host: 'faikarmoht.my.id',
   dialect: 'mysql',
 });
 
