@@ -17,13 +17,15 @@ const store = new sessionStore({
   db: db,
 });
 
+app.use(cors());
 app.use((req, res, next) => {
-  res.header('Access-control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://pelma-uas-frontend-9w373hpvc-hasbirizqullohs-projects.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
 
 app.use(express.json());
-app.use(cors());
 
 // (async () => {
 //   await db.sync();
