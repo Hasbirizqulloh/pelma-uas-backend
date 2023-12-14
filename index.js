@@ -17,6 +17,10 @@ const store = new sessionStore({
   db: db,
 });
 
+app.use('/', (req, res) => {
+  res.send('Working');
+});
+
 // (async () => {
 //   await db.sync();
 // })();
