@@ -17,6 +17,14 @@ const store = new sessionStore({
   db: db,
 });
 
+app.use((req, res, next) => {
+  res.header('Access-control-Allow-Origin', '*');
+  next();
+});
+
+app.use(express.json());
+app.use(cors());
+
 // (async () => {
 //   await db.sync();
 // })();
@@ -33,18 +41,11 @@ app.use(
   })
 );
 
-app.use(cors());
-app.use(express.json());
 app.use(UserRouter);
 app.use(ReportRoute);
 app.use(AuthRoute);
 
 // store.sync();
-
-app.use((req, res, next) => {
-  res.header('Access-control-Allow-Origin', '*');
-  next();
-});
 
 app.listen(process.env.APP_PORT, () => {
   console.log('Server up and running...');
